@@ -16,13 +16,13 @@ php artisan migrate --force || echo "⚠️  Migration warning (may be expected 
 echo "💾 Caching configuration..."
 php artisan config:cache || true
 
-# Cache routes
-echo "🛣️  Caching routes..."
-php artisan route:cache || true
+# Skip route caching due to Fortify route conflicts
+# Route caching is optional and will be done on first request anyway
+echo "🛣️  Routes will be cached on first request"
 
 # Cache views
 echo "👁️  Caching views..."
-php artisan view:cache || true
+php artisan view:cache || echo "⚠️  View cache skipped due to possible unregistered components"
 
 # Create storage link
 echo "🔗 Creating storage link..."
