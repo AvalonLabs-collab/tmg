@@ -1,0 +1,22 @@
+{
+  "name": "YMG Auto",
+  "runtime": "dockerfile",
+  "build": {
+    "builder": "dockerfile"
+  },
+  "deploy": {
+    "startCommand": "docker-entrypoint.sh",
+    "restartPolicy": "on_failure",
+    "numReplicas": 1
+  },
+  "variables": {
+    "APP_NAME": "YMG Auto",
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "LOG_CHANNEL": "stderr",
+    "DB_CONNECTION": "sqlite",
+    "CACHE_DRIVER": "file",
+    "QUEUE_CONNECTION": "sync",
+    "SESSION_DRIVER": "file"
+  }
+}

@@ -17,29 +17,33 @@ RUN apk add --no-cache \
     libpng-dev \
     libjpeg-turbo-dev \
     libxml2-dev \
+    libzip-dev \
     zip \
     unzip \
     git \
     curl \
     sqlite \
+    sqlite-dev \
     oniguruma-dev \
+    icu-dev \
     $PHPIZE_DEPS
 
-# Install PHP extensions required by Laravel + packages
-RUN apk add --no-cache \
-        icu-dev \
-        libzip-dev \
-        zlib-dev \
-    && docker-php-ext-install -j$(nproc) \
-        pdo_mysql \
-        mbstring \
-        exif \
-        pcntl \
-        bcmath \
-        gd \
-        xml \
-        intl \
-        zip
+# Install all PHP extensions
+RUN docker-php-ext-install -j$(nproc) \
+    pdo_sqlite \
+    pdo_mysql \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    gd \
+    xml \
+    intl \
+    zip
+
+# Install and enable opcache for production
+RUN docker-php-ext-install opcache
+
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
@@ -59,6 +63,10 @@ COPY . .
 # Copy built assets from Node stage
 COPY --from=node-builder /app/public/build ./public/build
 
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 # Set proper permissions
 RUN chown -R www-data:www-data /var/www && \
     chmod -R 755 /var/www && \
@@ -75,5 +83,7 @@ EXPOSE 8000
 # Switch to www-data user
 USER www-data
 
-# Run the application
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+# Run the application using entrypoint script
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+
