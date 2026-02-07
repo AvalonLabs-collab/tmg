@@ -1,5 +1,5 @@
-@if ($featuredVehicles)
-    <div>
+<div>
+    @if ($featuredVehicles)
         <section class="b-featured">
             <div class="container">
                 <h2 class="s-title wow zoomInUp" data-wow-delay="0.3s">Featured Vehicles</h2>
@@ -35,5 +35,5 @@
                 </div>
             </div>
         </section>
-    </div>
-@endif
+    @endif
+</div>
