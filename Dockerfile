@@ -28,8 +28,9 @@ RUN apk add --no-cache \
     icu-dev \
     $PHPIZE_DEPS
 
-# Install all PHP extensions
-RUN docker-php-ext-install -j$(nproc) \
+# Configure and install all PHP extensions
+RUN docker-php-ext-configure intl && \
+    docker-php-ext-install -j$(nproc) \
     pdo_sqlite \
     pdo_mysql \
     mbstring \
@@ -39,11 +40,8 @@ RUN docker-php-ext-install -j$(nproc) \
     gd \
     xml \
     intl \
-    zip
-
-# Install and enable opcache for production
-RUN docker-php-ext-install opcache
-
+    zip \
+    opcache
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
@@ -54,8 +52,8 @@ WORKDIR /var/www
 # Copy composer files
 COPY composer.json composer.lock ./
 
-# Install PHP dependencies
-RUN composer install --no-dev --no-interaction --optimize-autoloader --no-scripts
+# Install PHP dependencies - ignore platform reqs as fallback
+RUN composer install --no-dev --no-interaction --optimize-autoloader --no-scripts --ignore-platform-req=ext-intl --ignore-platform-req=ext-zip
 
 # Copy application files
 COPY . .
