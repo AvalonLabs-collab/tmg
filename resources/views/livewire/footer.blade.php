@@ -103,17 +103,17 @@
                 </div> --}}
 
                 <div class="col-md-3 col-xs-6">
-                    @if($company->phone || $company->address || $company->social_handles )
+                    @if($company?->phone || $company?->address || $company?->social_handles )
                          <address class="b-info__contacts wow zoomInUp" data-wow-delay="0.3s">
                         <p>contact us</p>
-                        @if($company->address)
+                        @if($company?->address)
                            <div class="b-info__contacts-item">
                             <span class="fa fa-map-marker"></span>
-                            <em>{{$company->address}}</em>
+                            <em>{{ $company?->address }}</em>
                         </div>
                         @endif
-                     
-                        @if($company->social_handles)
+
+                        @if($company?->social_handles)
                             @foreach($company->social_handles as $key => $value)
                                 <div class="b-info__contacts-item">
                                     <span class="fa fa-share-alt"></span>
@@ -121,10 +121,10 @@
                                 </div>
                             @endforeach
                         @endif
-                                          @if($company->phone)
+                                          @if($company?->phone)
                         <div class="b-info__contacts-item">
                             <span class="fa fa-phone"></span>
-                            <em>Phone: {{$company->phone}}</em>
+                            <em>Phone: {{ $company?->phone }}</em>
                         </div>
                         @endif
                          {{-- @if($companyemail)
@@ -138,7 +138,7 @@
 
                     @endif
 
-             
+
                     {{-- <address class="b-info__map">
                         <a href="contacts.html">Open Location Map</a>
                     </address> --}}
