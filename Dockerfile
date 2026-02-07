@@ -27,7 +27,7 @@ RUN apk add --no-cache \
 
 # Install PHP extensions required by Laravel
 RUN docker-php-ext-install -j$(nproc) \
-    pdo_sqlite \
+   pdo_mysql \
     mbstring \
     exif \
     pcntl \
