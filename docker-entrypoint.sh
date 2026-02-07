@@ -2,6 +2,12 @@
 
 echo "🚀 Starting YMG Auto Application..."
 
+# Clear any cached files first
+echo "🧹 Clearing caches..."
+php artisan config:clear || true
+php artisan route:clear || true
+php artisan view:clear || true
+
 # Run database migrations (don't fail on migration errors yet)
 echo "📦 Running database migrations..."
 php artisan migrate --force || echo "⚠️  Migration warning (may be expected on first run)"
