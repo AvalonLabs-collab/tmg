@@ -59,7 +59,7 @@ RUN composer install --no-dev --no-interaction --optimize-autoloader --no-script
 # Copy application files
 COPY . .
 
-# Copy built assets from Node stage
+# Copy built assets from Node stage (this must happen AFTER copying app files to override the empty build dir)
 COPY --from=node-builder /app/public/build ./public/build
 
 # Copy entrypoint script
