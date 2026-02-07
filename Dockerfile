@@ -25,15 +25,21 @@ RUN apk add --no-cache \
     oniguruma-dev \
     $PHPIZE_DEPS
 
-# Install PHP extensions required by Laravel
-RUN docker-php-ext-install -j$(nproc) \
-   pdo_mysql \
-    mbstring \
-    exif \
-    pcntl \
-    bcmath \
-    gd \
-    xml
+# Install PHP extensions required by Laravel + packages
+RUN apk add --no-cache \
+        icu-dev \
+        libzip-dev \
+        zlib-dev \
+    && docker-php-ext-install -j$(nproc) \
+        pdo_mysql \
+        mbstring \
+        exif \
+        pcntl \
+        bcmath \
+        gd \
+        xml \
+        intl \
+        zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
