@@ -1,6 +1,6 @@
 <h1>
     <x-main-app-layout>
         <x-navigation />
-        <livewire:searchbar />
+        <livewire:search-bar />
     </x-main-app-layout>
 </h1>
