@@ -27,13 +27,14 @@ RUN apk add --no-cache \
 
 # Install PHP extensions required by Laravel
 RUN docker-php-ext-install -j$(nproc) \
-    pdo_sqlite \
+    pdo_mysql \
     mbstring \
     exif \
     pcntl \
     bcmath \
     gd \
     xml
+
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
@@ -58,8 +59,6 @@ RUN chown -R www-data:www-data /var/www && \
     chmod -R 755 /var/www && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
-# Run composer post-install scripts
-RUN composer run-script post-install-cmd
 
 # Create storage directory and set permissions
 RUN mkdir -p /var/www/storage/app && \
