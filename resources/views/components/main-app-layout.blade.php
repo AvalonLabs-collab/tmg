@@ -11,6 +11,8 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <link href="{{ asset('assets/css/master.css') }}  " rel="stylesheet">
 
     <!-- SWITCHER -->
