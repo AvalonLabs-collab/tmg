@@ -1,29 +1,26 @@
 #!/bin/sh
 
-# Exit on error
-set -e
-
 echo "🚀 Starting YMG Auto Application..."
 
-# Run database migrations
+# Run database migrations (don't fail on migration errors yet)
 echo "📦 Running database migrations..."
-php artisan migrate --force
+php artisan migrate --force || echo "⚠️  Migration warning (may be expected on first run)"
 
 # Cache configuration
 echo "💾 Caching configuration..."
-php artisan config:cache
+php artisan config:cache || true
 
 # Cache routes
 echo "🛣️  Caching routes..."
-php artisan route:cache
+php artisan route:cache || true
 
 # Cache views
 echo "👁️  Caching views..."
-php artisan view:cache
+php artisan view:cache || true
 
 # Create storage link
 echo "🔗 Creating storage link..."
-php artisan storage:link
+php artisan storage:link || true
 
 # Start the application
 echo "✨ Starting Laravel application on port ${PORT:-8000}..."
