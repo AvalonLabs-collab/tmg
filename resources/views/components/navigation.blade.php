@@ -17,7 +17,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        <div class="collapse navbar-collapse navbar-main-slide" id="nav">
+                        <div class="collapse navbar-collapse navbar-main-slide" id="nav" style="display: block !important;">
                             <ul class="navbar-nav-menu">
                                 <li class="dropdown">
                                     <a  href="/">Home </a>
@@ -55,4 +55,14 @@
                 </div>
             </div>
         </div>
+        <style>
+            @media (max-width: 767px) {
+                #nav {
+                    display: none !important;
+                }
+                #nav.in {
+                    display: block !important;
+                }
+            }
+        </style>
     </nav>
