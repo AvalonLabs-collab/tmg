@@ -20,11 +20,11 @@
                         <div class="" id="nav" style="display: block !important;">
                             <ul class="">
                                 <li class="">
-                                    <a class=""  href="/">Home </a>
+                                    <a class="ai-style-change-2"  href="/">Home </a>
                                 </li>
-                               <li><a class=""  href="/search">Search</a></li>
-                                <li><a class=""  href="/about">About</a></li>
-                                <li><a class=""  href="/contact">Contact</a></li>
+                               <li><a class="ai-style-change-2"  href="/search">Search</a></li>
+                                <li><a class="ai-style-change-2"  href="/about">About</a></li>
+                                <li><a class="ai-style-change-2"  href="/contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
