@@ -17,46 +17,18 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        <div class="collapse navbar-collapse navbar-main-slide" id="nav" style="display: block !important;">
-                            <ul class="navbar-nav-menu">
-                                <li class="dropdown">
-                                    <a class=".ai-style-change-2"  href="/">Home </a>
-
+                        <div class="" id="nav" style="display: block !important;">
+                            <ul class="">
+                                <li class="">
+                                    <a class=""  href="/">Home </a>
                                 </li>
-                                {{-- <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle='dropdown' href="#">Grid <span
-                                            class="fa fa-caret-down"></span></a>
-                                    <ul class="dropdown-menu h-nav">
-                                        <li><a href="listings.html">listing 1</a></li>
-                                        <li><a href="listingsTwo.html">listing 2</a></li>
-                                        <li><a href="listTable.html">listing 3</a></li>
-                                        <li><a href="listTableTwo.html">listing 4</a></li>
-                                    </ul>
-                                </li> --}}
-                                {{-- <li><a href="compare.html">compare</a></li> --}}
-                               <li><a class=".ai-style-change-2"  href="/search">Search</a></li>
-                                <li><a class=".ai-style-change-2"  href="/about">About</a></li>
-
-                                {{-- <li><a href="article.html">Services</a></li> --}}
-                                {{-- <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle='dropdown' href="#">Blog <span
-                                            class="fa fa-caret-down"></span></a>
-                                    <ul class="dropdown-menu h-nav">
-                                        <li><a href="blog.html">Blog 1</a></li>
-                                        <li><a href="blogTwo.html">Blog 2</a></li>
-                                        <li><a href="404.html">Page 404</a></li>
-                                    </ul>
-                                </li> --}}
-                                {{-- <li><a href="submit1.html">Shop</a></li> --}}
-                                <li><a class=".ai-style-change-2"  href="/contact">Contact</a></li>
+                               <li><a class=""  href="/search">Search</a></li>
+                                <li><a class=""  href="/about">About</a></li>
+                                <li><a class=""  href="/contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <style>
-
-
-        </style>
     </nav>
