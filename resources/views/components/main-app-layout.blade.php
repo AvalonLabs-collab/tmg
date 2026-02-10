@@ -47,9 +47,9 @@
     <livewire:footer />
     @livewireScripts
     {{-- <script defer src="./assets/vendor/nouislider/dist/nouislider.min.js"></script> --}}
-    <script defer  src="{{ asset('assets/js/jquery-latest.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-latest.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script defer src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
-    <script defer  src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script defer  src="{{ asset('assets/js/modernizr.custom.js') }}"></script>
     <script defer  src="{{ asset('assets/assets/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
     <script defer  src="{{ asset('assets/js/jquery.easypiechart.min.js') }}"></script>
