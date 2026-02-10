@@ -56,13 +56,7 @@
             </div>
         </div>
         <style>
-      li.dropdown.ai-style-change-2 {
-    visibility: visible !important;
-}
 
-/* Ensure the anchor link inside is visible */
-li.dropdown.ai-style-change-2 > a.ai-style-change-1 {
-    visibility: visible !important;
-}
+
         </style>
     </nav>

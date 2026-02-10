@@ -41,7 +41,7 @@
     text-transform: uppercase;
     font: 600 12px 'Open Sans',sans-serif;
     margin:0 0 45px 0;
-    padding-bottom: 20px;  
+    padding-bottom: 20px;
     position: relative;
     display: inline-block;
 }
@@ -264,7 +264,7 @@
 .m-home .b-homeAuto__world > a:hover span.fa{
     background: #fff;
     color:#555;
-    
+
 }
 
 /* Count */
@@ -445,7 +445,7 @@
 }
 
 .m-home .b-info__latest-article-info h6{
-    margin-bottom: 0;  
+    margin-bottom: 0;
 }
 
 .m-home .b-info__latest-article-info p{
@@ -458,7 +458,7 @@
 
 /* Footer */
 .m-home .b-footer{
-   position: relative; 
+   position: relative;
 }
 
 .m-home .b-footer__toTop{
@@ -485,4 +485,7 @@
     border-radius: 100%;
     font-size:20px;
     padding: 2px;
+}
+     .ai-style-change-2 {
+    visibility: visible !important;
 }
