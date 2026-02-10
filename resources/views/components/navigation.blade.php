@@ -20,7 +20,7 @@
                         <div class="collapse navbar-collapse navbar-main-slide" id="nav" style="display: block !important;">
                             <ul class="navbar-nav-menu">
                                 <li class="dropdown">
-                                    <a  href="/">Home </a>
+                                    <a class=".ai-style-change-2"  href="/">Home </a>
 
                                 </li>
                                 {{-- <li class="dropdown">
@@ -34,8 +34,8 @@
                                     </ul>
                                 </li> --}}
                                 {{-- <li><a href="compare.html">compare</a></li> --}}
-                               <li><a href="/search">Search</a></li>
-                                <li><a href="/about">About</a></li>
+                               <li><a class=".ai-style-change-2"  href="/search">Search</a></li>
+                                <li><a class=".ai-style-change-2"  href="/about">About</a></li>
 
                                 {{-- <li><a href="article.html">Services</a></li> --}}
                                 {{-- <li class="dropdown">
@@ -48,7 +48,7 @@
                                     </ul>
                                 </li> --}}
                                 {{-- <li><a href="submit1.html">Shop</a></li> --}}
-                                <li><a href="/contact">Contact</a></li>
+                                <li><a class=".ai-style-change-2"  href="/contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -56,13 +56,13 @@
             </div>
         </div>
         <style>
-            @media (max-width: 767px) {
-                #nav {
-                    display: none !important;
-                }
-                #nav.in {
-                    display: block !important;
-                }
-            }
+      li.dropdown.ai-style-change-2 {
+    visibility: visible !important;
+}
+
+/* Ensure the anchor link inside is visible */
+li.dropdown.ai-style-change-2 > a.ai-style-change-1 {
+    visibility: visible !important;
+}
         </style>
     </nav>
