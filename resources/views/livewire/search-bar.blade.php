@@ -101,7 +101,6 @@
             </div>
         </div>
     </header>
-
     <div>
         <div class="">
                <x-loader :target="''"/>
