@@ -28,6 +28,8 @@ RUN apk add --no-cache \
     git \
     curl \
     sqlite \
+    pgsql \
+    pgsql-client \
     sqlite-dev \
     oniguruma-dev \
     icu-dev \
