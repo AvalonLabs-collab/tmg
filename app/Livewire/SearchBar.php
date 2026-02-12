@@ -27,19 +27,20 @@ class SearchBar extends Component
     public function render()
     {
         $search = $this->search;
-        $vehicles = [];
 
-        // $vehicles = Vehicle::query()
-        //     ->when($search, function ($query) use ($search) {
-        //         $query->where(function ($q) use ($search) {
-        //             $q->where('make', 'like', "%{$search}%")
-        //               ->orWhere('model', 'like', "%{$search}%")
-        //               ->orWhere('description', 'like', "%{$search}%")
-        //               ->orWhere('year', 'like', "%{$search}%");
-        //         });
-        //     })
-        //     ->paginate(20);
+        $vehicles = Vehicle::query()
+            ->when($search, function ($query) use ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('make', 'like', "%{$search}%")
+                      ->orWhere('model', 'like', "%{$search}%")
+                      ->orWhere('description', 'like', "%{$search}%")
+                      ->orWhere('year', 'like', "%{$search}%");
+                });
+            })
+            ->paginate(20);
 
         return view('livewire.search-bar', compact('vehicles'));
     }
 }
+
+
