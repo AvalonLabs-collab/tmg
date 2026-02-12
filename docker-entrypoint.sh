@@ -9,6 +9,10 @@ php artisan route:clear || true
 php artisan view:clear || true
 
 # Run migrations and seed
+until php artisan migrate:status 2>/dev/null; do
+  echo "Waiting for database to be ready..."
+  sleep 5
+done
 echo "📦 Running database migrations and seeders..."
 php artisan migrate --force --seed || echo "⚠️ Migration/Seeder warning"
 
