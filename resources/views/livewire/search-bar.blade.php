@@ -104,7 +104,7 @@
 
     <div>
         <div class="">
-               {{-- <x-loader :target="''"/> --}}
+               <x-loader :target="''"/>
             @if ($vehicles->count())
                 <div wire:loading.remove class="row" style="padding:5 90px;">
                 @foreach ($vehicles as $item)
@@ -137,25 +137,23 @@
                 @endforeach
 
             @else
-                {{-- <div class="loader-wrapper">
+                <div class="loader-wrapper">
                     @if (!$vehicles->count() && $search !== '')
                         <p class="tech-heading">sorry we have no vehicle matching this description</p>
                     @endif
                     @if ($search === '' && !$vehicles->count())
                         <h1 class="tech-heading">SEARCH ANY VEHICLE</h1>
                     @endif
-                </div> --}}
+                </div>
             @endif
 
 
         </div>
-              {{-- @if ($vehicles->hasPages())
+              @if ($vehicles->hasPages())
             <div style="display:flex; justify-content:center; margin-bottom:30px">
                 {{ $vehicles->links() }}
             </div>
-        @endif --}}
-
-        {{-- PAGINATOR BELOW CARDS --}}
+        @endif
 
     </div>
 </div>

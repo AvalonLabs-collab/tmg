@@ -36,7 +36,9 @@ class SearchBar extends Component
                       ->orWhere('description', 'like', "%{$search}%")
                       ->orWhere('year', 'like', "%{$search}%");
                 });
-            })
+            }, function ($query) {
+        $query->where('status', 'available');
+    })
             ->paginate(20);
 
         return view('livewire.search-bar', compact('vehicles'));
