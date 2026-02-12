@@ -28,12 +28,14 @@ RUN apk add --no-cache \
     git \
     curl \
     sqlite \
-    pgsql \
-    pgsql-client \
-    sqlite-dev \
+postgresql-dev \
+postgresql-client \
+sqlite-dev \
     oniguruma-dev \
     icu-dev \
     $PHPIZE_DEPS
+
+
 
 # Configure and install all PHP extensions
 RUN docker-php-ext-configure intl && \
