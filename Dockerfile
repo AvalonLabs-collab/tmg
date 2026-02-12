@@ -38,6 +38,7 @@ RUN docker-php-ext-configure intl && \
     docker-php-ext-install -j$(nproc) \
     pdo_sqlite \
     pdo_mysql \
+        pdo_pgsql \
     mbstring \
     exif \
     pcntl \
