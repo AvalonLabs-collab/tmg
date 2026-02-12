@@ -97,14 +97,14 @@
         <div class="search-container">
             <div class="search-form">
                 <input wire:model.live.debounce.300ms="search" name="search" placeholder="Search..." class="search-input">
-                <button type="submit" class="search-button"><span>Search</span></button>
+                {{-- <button type="submit" class="search-button"><span>Search</span></button> --}}
             </div>
         </div>
     </header>
 
     <div>
         <div class="">
-               <x-loader :target="''"/>
+               {{-- <x-loader :target="''"/> --}}
             @if ($vehicles->count())
   <div wire:loading.remove class="row" style="padding:5 90px;">
                 @foreach ($vehicles as $item)
