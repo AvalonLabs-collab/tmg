@@ -11,7 +11,6 @@ class VehicleController extends Controller
 {
     public function detail(Vehicle $vehicle)
     {
-
         $isAuthenticated = Auth::check();
         $authId = Auth::id();
         $sessionId = session()->getId();
