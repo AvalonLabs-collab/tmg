@@ -21,11 +21,12 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Vehicle::factory()->count(50)->create();
-        Vehicle::factory()->featured()->count(5)->create();
-        Vehicle::factory()->sold()->count(10)->create();
+        Vehicle::factory()->count(90)->create();
+        Vehicle::factory()->featured()->count(10)->create();
+        Vehicle::factory()->sold()->count(110)->create();
         $this->call([
             CompanySeeder::class,
+            filamentSeeder::class,
         ]);
     }
 }

@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 
+use Illuminate\Support\Facades\File;
 class VehicleFactory extends Factory
 {
     public function definition(): array
     {
+        $images = collect(File::files(public_path('storage')))
+            ->map(fn($file) => 'storage/' . $file->getFilename())
+            ->toArray();
+
+          $selectedImages = collect($images)->random(5)->values()->toArray();
         $makes = [
             'Toyota' => ['Camry', 'Corolla', 'RAV4', 'Highlander'],
             'Honda' => ['Accord', 'Civic', 'CR-V'],
@@ -56,10 +62,7 @@ class VehicleFactory extends Factory
             'doors' => Arr::random([2, 4, 5]),
 
             'images' => [
-                '01KGCPC9T0B28GZ5DH97NJG6DV.png',
-                '01KGCPC9T0B28GZ5DH97NJG6DV.png',
-                '01KGCPC9T0B28GZ5DH97NJG6DV.png',
-
+                $selectedImages,
             ],
 
             'description' => $this->faker->paragraphs(2, true),

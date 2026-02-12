@@ -6,8 +6,8 @@
                 <div class="row">
                     <div class="col-sm-9 col-xs-12">
                         <div class="b-detail__head-title">
-                            <h1>Nissan Maxima SV Premium 2016</h1>
-                            <h3>Fully Redesigned Upscale Midsize Car</h3>
+                            <h1>{{$vehicle->make}}</h1>
+                            <h3>{{$vehicle->model}}</h3>
                         </div>
                     </div>
                     <div class="col-sm-3 col-xs-12">
@@ -146,8 +146,26 @@
                                         nibh. Duis libero. Vivamus pharetra libero non facilisis imperdiet mi augue
                                         feugiat nisl.</p>
                                 </div> --}}
+
                             </div>
-                            @if ($vehicle->extra_specs)
+
+                            @if ($vehicle->price_breakdown)
+                               <div class="b-detail__main-info-extra wow zoomInUp" data-wow-delay="0.5s">
+                                <h2 class="s-titleDet">PRICE BREAKDOWN  </h2>
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <ul class="spec-list">
+                                            @foreach ( $vehicle->price_breakdown as $key => $value )
+                                                <li><span class="fa fa-check"></span>{{ ucfirst($key) }}: {{ $value}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                            @endif
+
+                            @if ($vehicle->other_specs)
                               <div class="b-detail__main-info-extra wow zoomInUp" data-wow-delay="0.5s">
                                 <h2 class="s-titleDet">EXTRA FEATURES</h2>
                                 <div class="row">

@@ -12,6 +12,9 @@ php artisan view:clear || true
 echo "📦 Running database migrations..."
 php artisan migrate --force || echo "⚠️  Migration warning (may be expected on first run)"
 
+echo " Seed database "
+php artisan db:seed --force || echo "⚠️  Seeding warning (may be expected on first run)"
+
 # Cache configuration
 echo "💾 Caching configuration..."
 php artisan config:cache || true
