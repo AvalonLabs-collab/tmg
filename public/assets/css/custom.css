@@ -2,3 +2,31 @@
 /* CUSTOM CSS (ADD YOUR CSS HERE!) */
 /*//////////////////////////////////////////////////////////////////////////////////////////*/
 
+/* Prevent horizontal overflow */
+body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Ensure containers don't overflow */
+.container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Fix any elements that might cause overflow */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure no element exceeds viewport width */
+* {
+    max-width: 100%;
+}
+

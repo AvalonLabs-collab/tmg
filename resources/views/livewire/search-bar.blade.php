@@ -111,7 +111,7 @@
                     <div class="col-md-3 col-xs-12 col-sm-6">
                         <div class="b-auto__main-item wow zoomInLeft" data-wow-delay="0.5s">
                             <img class="img-responsive center-block"
-                                src="{{ asset('storage/01KGCPC9T0B28GZ5DH97NJG6DV.png') }}" alt="LandRover" />
+                                src="{{ asset($item['images'][0]) }}" alt="LandRover" />
                             <div class="b-world__item-val">
                                 <span class="b-world__item-val-title">REGISTERED <span>2014</span></span>
                             </div>
@@ -147,8 +147,8 @@
                     @endif
                 </div>
             @endif
-            
-          
+
+
         </div>
               @if ($vehicles->hasPages())
             <div style="display:flex; justify-content:center; margin-bottom:30px">
@@ -157,6 +157,6 @@
         @endif
 
         {{-- PAGINATOR BELOW CARDS --}}
-    
+
     </div>
 </div>
