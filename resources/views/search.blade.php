@@ -1,4 +1,4 @@
 <x-main-app-layout>
     <x-navigation />
-    <livewire:search-bar />
+    {{-- <livewire:search-bar /> --}}
 </x-main-app-layout>
