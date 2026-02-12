@@ -8,12 +8,9 @@ php artisan config:clear || true
 php artisan route:clear || true
 php artisan view:clear || true
 
-# Run database migrations (don't fail on migration errors yet)
-echo "📦 Running database migrations..."
-php artisan migrate --force || echo "⚠️  Migration warning (may be expected on first run)"
-
-echo " Seed database "
-php artisan db:seed --force || echo "⚠️  Seeding warning (may be expected on first run)"
+# Run migrations and seed
+echo "📦 Running database migrations and seeders..."
+php artisan migrate --force --seed || echo "⚠️ Migration/Seeder warning"
 
 # Cache configuration
 echo "💾 Caching configuration..."
