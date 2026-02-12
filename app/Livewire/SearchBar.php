@@ -10,13 +10,12 @@ class SearchBar extends Component
 {
     use WithPagination;
 
-    // protected $paginationTheme = 'bootstrap';
+    protected $queryString = ['search'];
 
     public $search = '';
 
-    public function updatedSearch($value)
+    public function updatedSearch()
     {
-        sleep(1);
         $this->resetPage();
     }
 
@@ -27,20 +26,19 @@ class SearchBar extends Component
 
     public function render()
     {
+        $search = $this->search;
+
         $vehicles = Vehicle::query()
-            ->when($this->search, function ($query) {
-                $query->where(function ($q) {
-                    $q->where('make', 'like', "%{$this->search}%")
-                        ->orWhere('model', 'like', "%{$this->search}%")
-                        ->orWhere('description', 'like', "%{$this->search}%")
-                        ->orWhere('year', 'like', "%{$this->search}%");
+            ->when($search, function ($query) use ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('make', 'like', "%{$search}%")
+                      ->orWhere('model', 'like', "%{$search}%")
+                      ->orWhere('description', 'like', "%{$search}%")
+                      ->orWhere('year', 'like', "%{$search}%");
                 });
             })
             ->paginate(20);
 
-        return view('livewire.search-bar', [
-            'vehicles' => $vehicles,
-        ]);
-
+        return view('livewire.search-bar', compact('vehicles'));
     }
 }
