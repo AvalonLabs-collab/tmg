@@ -15,6 +15,7 @@ class VehicleGallary extends Component
         $this->vehicle = $vehicle;
         $this->vehicleImages = $vehicle->images ?? [];
         Log::info('VehicleGallary mounted with vehicle ID: '.$vehicle->id);
+                Log::info('VehicleGallary mounted with vehicles: '.$this->vehicleImages);
     }
 
     public function render()
