@@ -12,7 +12,7 @@ class VehicleFactory extends Factory
     public function definition(): array
     {
         $images = collect(File::files(public_path('storage')))
-            ->map(fn($file) => 'storage/' . $file->getFilename())
+            ->map(fn($file) => $file->getFilename())
             ->toArray();
 
           $selectedImages = collect($images)->random(5)->values()->toArray();
