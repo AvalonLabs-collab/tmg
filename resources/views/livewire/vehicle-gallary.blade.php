@@ -8,7 +8,7 @@
                              <li class="s-relative">
                                  <a data-toggle="modal" data-target="#myModal" href="#"
                                      class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>
-                                 <img class="img-responsive center-block" src="{{ asset('storage/' . $image) }}"
+                                 <img class="img-responsive center-block" src="{{ asset($image) }}"
                                      alt="nissan" />
                              </li>
                          @endforeach
@@ -21,7 +21,7 @@
                          @foreach ($vehicleImages as $item)
                              <a href="#" data-slide-index="{{ $loop->index }}"
                                  class="b-detail__main-info-images-small-one">
-                                 <img class="img-responsive" src="{{ asset('storage/' . $item) }}" alt="nissan" />
+                                 <img class="img-responsive" src="{{ asset($item) }}" alt="nissan" />
                              </a>
                          @endforeach
                      @endif
