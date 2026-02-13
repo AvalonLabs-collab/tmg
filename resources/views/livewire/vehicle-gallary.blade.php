@@ -13,12 +13,9 @@
                     @empty
     <p>No images available.</p>
 @endforelse
-
-
-
                  </ul>
              </div>
-             <div class="col-xs-2 pagerSlider pagerVertical">
+             {{-- <div class="col-xs-2 pagerSlider pagerVertical">
                  <div class="b-detail__main-info-images-small" id="bx-pager">
                     @forelse ( $vehicleImages as $item )
                     <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one">
@@ -28,12 +25,7 @@
                     <p>no images found</p>
 
                     @endforelse
-                     {{-- @if ($vehicleImages)
-                         @foreach ()
-
-                         @endforeach
-                     @endif --}}
                  </div>
-             </div>
+             </div> --}}
          </div>
      </div>
