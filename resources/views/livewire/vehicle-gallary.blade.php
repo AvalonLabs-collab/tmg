@@ -3,7 +3,7 @@
              <div class="col-xs-10">
                  <ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager"
                      data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
-                     @if ($vehicleImages)
+                     {{-- @if ($vehicleImages)
                          @foreach ($vehicleImages as $image)
                              <li class="s-relative">
                                  <a data-toggle="modal" data-target="#myModal" href="#"
@@ -12,19 +12,19 @@
                                      alt="nissan" />
                              </li>
                          @endforeach
-                     @endif
+                     @endif --}}
                  </ul>
              </div>
              <div class="col-xs-2 pagerSlider pagerVertical">
                  <div class="b-detail__main-info-images-small" id="bx-pager">
-                     @if ($vehicleImages)
+                     {{-- @if ($vehicleImages)
                          @foreach ($vehicleImages as $item)
                              <a href="#" data-slide-index="{{ $loop->index }}"
                                  class="b-detail__main-info-images-small-one">
                                  <img class="img-responsive" src="{{ asset($item) }}" alt="nissan" />
                              </a>
                          @endforeach
-                     @endif
+                     @endif --}}
                  </div>
              </div>
          </div>
