@@ -134,7 +134,6 @@
                         </div>
                     </div>
                 @endforeach
-
             @else
                 <div class="loader-wrapper">
                     @if (!$vehicles->count() && $search !== '')
@@ -145,8 +144,6 @@
                     @endif
                 </div>
             @endif
-
-
         </div>
               @if ($vehicles->hasPages())
             <div style="display:flex; justify-content:center; margin-bottom:30px">

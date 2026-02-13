@@ -165,7 +165,7 @@
                             </div>
                             @endif
 
-                            @if ($vehicle->other_specs)
+                            @if ($vehicle->extra_specs)
                               <div class="b-detail__main-info-extra wow zoomInUp" data-wow-delay="0.5s">
                                 <h2 class="s-titleDet">EXTRA FEATURES</h2>
                                 <div class="row">
