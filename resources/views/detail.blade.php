@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <div class="b-detail__main-info">
-                            <livewire:vehicle-gallary :$vehicle />
+                            {{-- <livewire:vehicle-gallary :$vehicle /> --}}
                             {{-- <div class="b-detail__main-info-characteristics wow zoomInUp" data-wow-delay="0.5s">
                                 <div class="b-detail__main-info-characteristics-one">
                                     <div class="b-detail__main-info-characteristics-one-top">
