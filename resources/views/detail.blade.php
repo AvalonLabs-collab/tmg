@@ -257,7 +257,7 @@
                     </div>
                     <div class="col-md-4 col-xs-12">
                         <aside class="b-detail__main-aside">
-                            {{-- <livewire:detail-specifications :$vehicle /> --}}
+                            <livewire:detail-specifications :$vehicle />
                             <livewire:lead-form :$vehicle />
                             {{-- <div class="b-detail__main-aside-payment wow zoomInUp" data-wow-delay="0.5s">
                                 <h2 class="s-titleDet">CAR PAYMENT CALCULATOR</h2>
@@ -298,7 +298,7 @@
         <div class="container">
             <h5 class="s-titleBg wow zoomInUp" data-wow-delay="0.5s">FIND OUT MORE</h5><br />
             <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">RELATED VEHICLES ON SALE</h2>
-            {{-- <livewire:recomendation /> --}}
+            <livewire:recomendation />
         </div>
     </section>
     <!--"b-related-->
