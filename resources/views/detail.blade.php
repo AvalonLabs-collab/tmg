@@ -40,18 +40,15 @@
              <div class="col-xs-10">
                  <ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager"
                      data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
-                         @if (isset($vehicle->images && $vehicle->images !== false))
-                                   @forelse ($vehicle->images as $image)
-                             <li class="s-relative">
-                                 <a data-toggle="modal" data-target="#myModal" href="#"
-                                     class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>
-                                 <img class="img-responsive center-block" src="{{ asset('assets/media/237x202/mersList.jpg') }}"
-                                     alt="nissan" />
-                             </li>
-                    @empty
+                     @forelse ($vehicle->images ?? [] as $image)
+    <li class="s-relative">
+        <img class="img-responsive center-block"
+             src="{{ Storage::url($image) }}"
+             alt="vehicle image" />
+    </li>
+@empty
     <p>No images available.</p>
 @endforelse
-                         @endif
 
                  </ul>
              </div>
