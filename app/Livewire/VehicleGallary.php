@@ -12,10 +12,10 @@ class VehicleGallary extends Component
 
     public function mount($vehicle)
     {
-        $this->vehicle = Vehicle::find($vehicle->id);
-        $this->vehicleImages = $this->vehicle->images ?? [];
-        Log::info('VehicleGallary mounted with vehicle ID: '.$vehicle->id);
-                Log::info('VehicleGallary mounted with vehicles: '.$this->vehicleImages);
+        // $this->vehicle = Vehicle::find($vehicle->id);
+        // $this->vehicleImages = $this->vehicle->images ?? [];
+        // Log::info('VehicleGallary mounted with vehicle ID: '.$vehicle->id);
+        //         Log::info('VehicleGallary mounted with vehicles: '.$this->vehicleImages);
     }
 
     public function render()
