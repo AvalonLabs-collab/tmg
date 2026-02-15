@@ -59,6 +59,7 @@ class Reccomendation
     {
         return Vehicle::latest()
             ->limit(40)
-            ->get();
+            ->get()
+            ->toArray();
     }
 }

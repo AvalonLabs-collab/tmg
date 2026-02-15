@@ -251,8 +251,6 @@
 
                             @endif
 
-
-
                         </div>
                     </div>
                     <div class="col-md-4 col-xs-12">
