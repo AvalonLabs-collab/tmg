@@ -15,7 +15,7 @@ class Recomendation extends Component
     {
         try {
             $rec = new Reccomend;
-            $this->reccomendation = $rec->recommend()->toArray();
+            $this->reccomendation = $rec->recommend();
         } catch (\Exception $e) {
             log('Error in Reccomendation mount: '.$e->getMessage());
         }
