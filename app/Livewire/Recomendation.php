@@ -68,7 +68,7 @@ class Recomendation extends Component
 
     public function createList()
     {
-        $this->reccomendation = $vehicles = [
+        $this->reccomendation = [
     [
         'make' => 'Toyota',
         'model' => 'Corolla',
