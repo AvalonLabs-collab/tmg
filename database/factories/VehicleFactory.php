@@ -11,11 +11,11 @@ class VehicleFactory extends Factory
 {
     public function definition(): array
     {
-        $images = collect(File::files(public_path('storage')))
-            ->map(fn($file) => $file->getFilename())
-            ->toArray();
+        // $images = collect(File::files(public_path('storage')))
+        //     ->map(fn($file) => $file->getFilename())
+        //     ->toArray();
 
-          $selectedImages = collect($images)->random(5)->values()->toArray();
+        //   $selectedImages = collect($images)->random(5)->values()->toArray();
         $makes = [
             'Toyota' => ['Camry', 'Corolla', 'RAV4', 'Highlander'],
             'Honda' => ['Accord', 'Civic', 'CR-V'],
@@ -61,9 +61,10 @@ class VehicleFactory extends Factory
             'engine' => Arr::random(['1.8L', '2.0L', '2.5L', '3.0L']),
             'doors' => Arr::random([2, 4, 5]),
 
-            'images' => [
-                $selectedImages,
-            ],
+            'images' => $this->faker->randomElements([
+                'audiTablet.jpg',
+                'chevroletTablet.jpg',
+            ], rand(1, 2)),
 
             'description' => $this->faker->paragraphs(2, true),
 

@@ -39,8 +39,6 @@
 @endforelse
                          @endif
 
-
-
                  </ul>
              </div>
              <div class="col-xs-2 pagerSlider pagerVertical">
