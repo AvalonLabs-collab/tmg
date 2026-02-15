@@ -26,7 +26,7 @@
              <div class="col-xs-10">
                  <ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager"
                      data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
-                         @if (isset($vehicle->images))
+                         @if (isset($vehicle->images && is_array($vehicle->images)))
                                    @forelse ($vehicle->images as $image)
                              <li class="s-relative">
                                  <a data-toggle="modal" data-target="#myModal" href="#"
@@ -43,7 +43,7 @@
              </div>
              <div class="col-xs-2 pagerSlider pagerVertical">
                  <div class="b-detail__main-info-images-small" id="bx-pager">
-                        @if (isset($vehicle->images))
+                        @if (isset($vehicle->images) && is_array($vehicle->images))
                     @forelse ( $vehicle->images as $item )
                     <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one">
                         <img class="img-responsive center-block" src="{{ asset('storage/'.$item) }}" alt="nissan" />
@@ -241,7 +241,7 @@
                     </div>
                     <div class="col-md-4 col-xs-12">
                         <aside class="b-detail__main-aside">
-                            <livewire:detail-specifications :$vehicle />
+                            {{-- <livewire:detail-specifications :$vehicle /> --}}
                             <livewire:lead-form :$vehicle />
                             {{-- <div class="b-detail__main-aside-payment wow zoomInUp" data-wow-delay="0.5s">
                                 <h2 class="s-titleDet">CAR PAYMENT CALCULATOR</h2>
