@@ -43,7 +43,8 @@ class Reccomendation
                 $avgPrice * 0.8,
                 $avgPrice * 1.2,
             ])
-            ->get();
+            ->get()
+            ->toArray();
     }
 
     protected function resolveViewerIdentity(): array
