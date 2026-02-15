@@ -45,9 +45,9 @@
                  <div class="b-detail__main-info-images-small" id="bx-pager">
                         {{-- @if (isset($vehicle->images) && $vehicle->images !== false)
                     @forelse ( $vehicle->images as $item ) --}}
-                    <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one">
+                    {{-- <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one"> --}}
                         <img class="img-responsive center-block" src="{{ asset('assets/media/237x202/mersList.jpg') }}" alt="nissan" />
-                    </a>
+                    {{-- </a> --}}
                     {{-- @empty
                     <p>no images found</p>
 
