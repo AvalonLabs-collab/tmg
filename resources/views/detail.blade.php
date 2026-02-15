@@ -6,15 +6,29 @@
                 <div class="row">
                     <div class="col-sm-9 col-xs-12">
                         <div class="b-detail__head-title">
-                            <h1>{{$vehicle->make}}</h1>
-                            <h3>{{$vehicle->model}}</h3>
+                           @if (isset($vehicle->make))
+                               <h1>{{$vehicle->make}}</h1>
+                           @endif
+                              @if (isset($vehicle->model))
+                                 <h3>{{$vehicle->model}}</h3>
+                           @endif
+
+
                         </div>
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        {{-- <div class="b-detail__head-price">
+                     @if (isset($vehicle->currency ) && isset($vehicle->price))
+                          <div class="col-sm-3 col-xs-12">
+                        <div class="b-detail__head-price">
+
                             <div class="b-detail__head-price-num">{{ $vehicle->currency }} {{ $vehicle->price }}</div>
-                        </div> --}}
+
+                        </div>
                     </div>
+                    @else
+                               <div class="b-detail__head-price-num">price negociable</div>
+                     @endif
+
+
                 </div>
             </header>
             <div class="b-detail__main">
@@ -26,33 +40,33 @@
              <div class="col-xs-10">
                  <ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager"
                      data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
-                         {{-- @if (isset($vehicle->images && $vehicle->images !== false))
-                                   @forelse ($vehicle->images as $image) --}}
+                         @if (isset($vehicle->images && $vehicle->images !== false))
+                                   @forelse ($vehicle->images as $image)
                              <li class="s-relative">
                                  <a data-toggle="modal" data-target="#myModal" href="#"
                                      class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>
                                  <img class="img-responsive center-block" src="{{ asset('assets/media/237x202/mersList.jpg') }}"
                                      alt="nissan" />
                              </li>
-                    {{-- @empty
+                    @empty
     <p>No images available.</p>
 @endforelse
-                         @endif --}}
+                         @endif
 
                  </ul>
              </div>
              <div class="col-xs-2 pagerSlider pagerVertical">
                  <div class="b-detail__main-info-images-small" id="bx-pager">
-                        {{-- @if (isset($vehicle->images) && $vehicle->images !== false)
-                    @forelse ( $vehicle->images as $item ) --}}
-                    {{-- <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one"> --}}
+                        @if (isset($vehicle->images) && $vehicle->images !== false)
+                    @forelse ( $vehicle->images as $item )
+                     <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one">
                         <img class="img-responsive center-block" src="{{ asset('assets/media/237x202/mersList.jpg') }}" alt="nissan" />
-                    {{-- </a> --}}
-                    {{-- @empty
+                     </a>
+                    @empty
                     <p>no images found</p>
 
                     @endforelse
-                      @endif --}}
+                      @endif
                  </div>
              </div>
          </div>
@@ -246,7 +260,7 @@
                     </div>
                     <div class="col-md-4 col-xs-12">
                         <aside class="b-detail__main-aside">
-                            {{-- <livewire:detail-specifications :$vehicle /> --}}
+                            <livewire:detail-specifications :$vehicle />
                             <livewire:lead-form :$vehicle />
                             {{-- <div class="b-detail__main-aside-payment wow zoomInUp" data-wow-delay="0.5s">
                                 <h2 class="s-titleDet">CAR PAYMENT CALCULATOR</h2>
@@ -287,7 +301,7 @@
         <div class="container">
             <h5 class="s-titleBg wow zoomInUp" data-wow-delay="0.5s">FIND OUT MORE</h5><br />
             <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">RELATED VEHICLES ON SALE</h2>
-            {{-- <livewire:recomendation /> --}}
+            <livewire:recomendation />
         </div>
     </section>
     <!--"b-related-->
