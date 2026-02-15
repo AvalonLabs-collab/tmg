@@ -14,6 +14,7 @@ use function Illuminate\Log\log;
 class Recomendation extends Component
 {
     public $reccomendation;
+        protected $listeners = ['hydrate' => 'createList'];
 
         public function recommend()
     {

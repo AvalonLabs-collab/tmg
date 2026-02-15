@@ -1,5 +1,5 @@
 <div class="">
-    <div x-init="$nextTick(() => $wire.createList())" class="row">
+    <div class="row">
         @forelse ($reccomendation ?? [] as $item)
             <div class="col-md-3 col-xs-6">
                 <div class="b-auto__main-item wow zoomInLeft" data-wow-delay="0.5s">
