@@ -43,7 +43,7 @@
                      @forelse ($vehicle->images ?? [] as $image)
     <li class="s-relative">
         <img class="img-responsive center-block"
-             src="{{ Storage::url($image) }}"
+             src="{{ asset('assets/media/237x202/mersList.jpg') }}"
              alt="vehicle image" />
     </li>
 @empty
