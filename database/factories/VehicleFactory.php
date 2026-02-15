@@ -62,9 +62,9 @@ class VehicleFactory extends Factory
             'doors' => Arr::random([2, 4, 5]),
 
             'images' => $this->faker->randomElements([
-                'audiTablet.jpg',
-                'chevroletTablet.jpg',
-            ], rand(1, 2)),
+                'assets/media/237x202/maxima.jpg',
+                   'assets/media/237x202/mersList.jpg',
+            ]),
 
             'description' => $this->faker->paragraphs(2, true),
 

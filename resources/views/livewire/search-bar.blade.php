@@ -109,8 +109,12 @@
                 @foreach ($vehicles as $item)
                     <div class="col-md-3 col-xs-12 col-sm-6">
                         <div class="b-auto__main-item wow zoomInLeft" data-wow-delay="0.5s">
-                            {{-- <img class="img-responsive center-block"
-                                src="{{ asset($item['images'][0]) }}" alt="LandRover" /> --}}
+                           @if (isset($item->images) && $item->images !== false)
+                            <img class="img-responsive center-block"
+                                src="{{ asset($item->images[0]) }}" alt="LandRover" />
+                           @endif
+
+
                             <div class="b-world__item-val">
                                 <span class="b-world__item-val-title">REGISTERED <span>2014</span></span>
                             </div>

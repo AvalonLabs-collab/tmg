@@ -31,7 +31,7 @@
                              <li class="s-relative">
                                  <a data-toggle="modal" data-target="#myModal" href="#"
                                      class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>
-                                 <img class="img-responsive center-block" src="{{ asset('storage/'.$image) }}"
+                                 <img class="img-responsive center-block" src="{{ asset($image) }}"
                                      alt="nissan" />
                              </li>
                     @empty
@@ -46,7 +46,7 @@
                         @if (isset($vehicle->images) && is_array($vehicle->images))
                     @forelse ( $vehicle->images as $item )
                     <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one">
-                        <img class="img-responsive center-block" src="{{ asset('storage/'.$item) }}" alt="nissan" />
+                        <img class="img-responsive center-block" src="{{ asset($item) }}" alt="nissan" />
                     </a>
                     @empty
                     <p>no images found</p>
