@@ -11,9 +11,9 @@
                         </div>
                     </div>
                     <div class="col-sm-3 col-xs-12">
-                        <div class="b-detail__head-price">
+                        {{-- <div class="b-detail__head-price">
                             <div class="b-detail__head-price-num">{{ $vehicle->currency }} {{ $vehicle->price }}</div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </header>
