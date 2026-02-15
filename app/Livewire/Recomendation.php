@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 class Recomendation extends Component
 {
     public $vehicles = [
-    [
+        [
         'make' => 'Toyota',
         'model' => 'Corolla',
         'year' => 2020,
@@ -40,8 +40,8 @@ class Recomendation extends Component
         'fuel_type' => 'Petrol',
         'drivetrain' => 'FWD',
         'status' => 'Used',
-    ],
-    [
+      ],
+       [
         'make' => 'Honda',
         'model' => 'Civic',
         'year' => 2019,
@@ -69,8 +69,8 @@ class Recomendation extends Component
         'fuel_type' => 'Petrol',
         'drivetrain' => 'FWD',
         'status' => 'Used',
-    ],
-    [
+       ],
+      [
         'make' => 'Ford',
         'model' => 'Mustang',
         'year' => 2021,
@@ -100,7 +100,7 @@ class Recomendation extends Component
         'fuel_type' => 'Petrol',
         'drivetrain' => 'RWD',
         'status' => 'Used',
-    ],
+      ],
 ];
 
     public $reccomendation;
@@ -158,6 +158,10 @@ class Recomendation extends Component
 
     public function createList()
     {
+        $this->reccomendation = $this->vehicles;
+    }
+
+    public function mount(){
         $this->reccomendation = $this->vehicles;
     }
 
