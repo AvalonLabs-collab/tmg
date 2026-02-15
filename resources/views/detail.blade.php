@@ -26,7 +26,7 @@
              <div class="col-xs-10">
                  <ul class="b-detail__main-info-images-big bxslider enable-bx-slider" data-pager-custom="#bx-pager"
                      data-mode="horizontal" data-pager-slide="true" data-mode-pager="vertical" data-pager-qty="5">
-                         @if (isset($vehicle->images && is_array($vehicle->images)))
+                         @if (isset($vehicle->images && $vehicle->images !== false))
                                    @forelse ($vehicle->images as $image)
                              <li class="s-relative">
                                  <a data-toggle="modal" data-target="#myModal" href="#"
@@ -43,7 +43,7 @@
              </div>
              <div class="col-xs-2 pagerSlider pagerVertical">
                  <div class="b-detail__main-info-images-small" id="bx-pager">
-                        @if (isset($vehicle->images) && is_array($vehicle->images))
+                        @if (isset($vehicle->images) && $vehicle->images !== false)
                     @forelse ( $vehicle->images as $item )
                     <a data-slide-index="{{ $loop->index }}" href="#" class="b-detail__main-info-images-small-one">
                         <img class="img-responsive center-block" src="{{ asset($item) }}" alt="nissan" />
@@ -123,7 +123,9 @@
                                     </div>
                                 </div>
                             </div> --}}
-                            <div class="b-detail__main-info-text wow zoomInUp" data-wow-delay="0.5s">
+
+                           @if (isset($vehicle->description) && $vehicle->description !== false)
+     <div class="b-detail__main-info-text wow zoomInUp" data-wow-delay="0.5s">
                                 <div class="b-detail__main-aside-about-form-links">
                                     <a href="#" class="j-tab m-active s-lineDownCenter" data-to='#info1'>GENERAL
                                         DESCRIPTION</a>
@@ -184,6 +186,9 @@
                                 </div> --}}
 
                             </div>
+                           @endif
+
+
 
                             @if ($vehicle->price_breakdown)
                                <div class="b-detail__main-info-extra wow zoomInUp" data-wow-delay="0.5s">
@@ -201,7 +206,7 @@
                             </div>
                             @endif
 
-                            @if ($vehicle->extra_specs)
+                            @if (isset($vehicle->extra_specs) && !empty($vehicle->extra_specs))
                               <div class="b-detail__main-info-extra wow zoomInUp" data-wow-delay="0.5s">
                                 <h2 class="s-titleDet">EXTRA FEATURES</h2>
                                 <div class="row">
@@ -282,7 +287,7 @@
         <div class="container">
             <h5 class="s-titleBg wow zoomInUp" data-wow-delay="0.5s">FIND OUT MORE</h5><br />
             <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">RELATED VEHICLES ON SALE</h2>
-            <livewire:recomendation />
+            {{-- <livewire:recomendation /> --}}
         </div>
     </section>
     <!--"b-related-->
