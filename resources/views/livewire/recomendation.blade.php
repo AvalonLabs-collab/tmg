@@ -1,4 +1,4 @@
-<div class="">
+<div wire:init="createList" class="">
     <div class="row">
         @forelse ($reccomendation ?? [] as $item)
             <div class="col-md-3 col-xs-6">
