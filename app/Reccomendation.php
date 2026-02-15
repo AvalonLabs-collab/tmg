@@ -31,7 +31,6 @@ class Reccomendation
 
         $makes = $baseVehicles->pluck('make')->unique();
         $models = $baseVehicles->pluck('model')->unique();
-        $avgPrice = $baseVehicles->avg('price');
 
         return Vehicle::query()
             ->whereNotIn('id', $viewedVehicleIds)
@@ -39,10 +38,6 @@ class Reccomendation
                 $query->whereIn('model', $models)
                     ->orWhereIn('make', $makes);
             })
-            ->whereBetween('price', [
-                $avgPrice * 0.8,
-                $avgPrice * 1.2,
-            ])
             ->get()
             ->toArray();
     }
