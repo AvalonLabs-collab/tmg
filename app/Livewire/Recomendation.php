@@ -157,13 +157,13 @@ class Recomendation extends Component
     }
 
 
-    public function createList()
-    {
-        $this->reccomendation = $this->vehicles;
-    }
+    // public function createList()
+    // {
+    //     $this->reccomendation = $this->vehicles;
+    // }
 
     public function mount(){
-        $this->reccomendation = $this->vehicles;
+        $this->reccomendation = $this->fallbackRecommendations();
     }
 
     public function render()
