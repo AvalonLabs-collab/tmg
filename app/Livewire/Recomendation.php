@@ -156,6 +156,7 @@ class Recomendation extends Component
             ->toArray();
     }
 
+
     public function createList()
     {
         $this->reccomendation = $this->vehicles;
