@@ -57,8 +57,8 @@
                 <div class="col-md-4 col-xs-6">
                     <nav class="b-topBar__nav">
                         <ul>
-                            <li><a href="#">Register</a></li>
-                            <li><a href="#">Sign in</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Sign in</a></li>
                         </ul>
                     </nav>
                 </div>
