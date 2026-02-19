@@ -30,12 +30,10 @@ class SearchBar extends Component
 
         $vehicles = Vehicle::query()
             ->when($search, function ($query) use ($search) {
-                $query->where(function ($q) use ($search) {
-                    $q->where('make', 'like', "%{$search}%")
+                    $query->where('make', 'like', "%{$search}%")
                       ->orWhere('model', 'like', "%{$search}%")
                       ->orWhere('description', 'like', "%{$search}%")
                       ->orWhere('year', 'like', "%{$search}%");
-                });
             }, function ($query) {
         $query->where('status', 'available');
     })
