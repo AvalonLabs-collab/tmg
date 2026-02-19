@@ -104,57 +104,57 @@ class Recomendation extends Component
 ];
 
     public $reccomendation;
-        protected $listeners = ['hydrate' => 'createList'];
+        // protected $listeners = ['hydrate' => 'createList'];
 
-        public function recommend()
-    {
-        [$column, $identifier] = $this->resolveViewerIdentity();
+    //     public function recommend()
+    // {
+    //     [$column, $identifier] = $this->resolveViewerIdentity();
 
-        $viewedVehicleIds = DB::table('vehicle_views')
-            ->where($column, $identifier)
-            ->latest()
-            ->pluck('vehicle_id');
+    //     $viewedVehicleIds = DB::table('vehicle_views')
+    //         ->where($column, $identifier)
+    //         ->latest()
+    //         ->pluck('vehicle_id');
 
-        if ($viewedVehicleIds->isEmpty()) {
-            return $this->fallbackRecommendations();
-        }
+    //     if ($viewedVehicleIds->isEmpty()) {
+    //         return $this->fallbackRecommendations();
+    //     }
 
-        $baseVehicles = Vehicle::whereIn('id', $viewedVehicleIds)->get();
-        Log::info($viewedVehicleIds);
+    //     $baseVehicles = Vehicle::whereIn('id', $viewedVehicleIds)->get();
+    //     Log::info($viewedVehicleIds);
 
-        if ($baseVehicles->isEmpty()) {
-            return $this->fallbackRecommendations();
-        }
+    //     if ($baseVehicles->isEmpty()) {
+    //         return $this->fallbackRecommendations();
+    //     }
 
-        $makes = $baseVehicles->pluck('make')->unique();
-        $models = $baseVehicles->pluck('model')->unique();
+    //     $makes = $baseVehicles->pluck('make')->unique();
+    //     $models = $baseVehicles->pluck('model')->unique();
 
-        return Vehicle::query()
-            ->whereNotIn('id', $viewedVehicleIds)
-            ->where(function ($query) use ($makes, $models) {
-                $query->whereIn('model', $models)
-                    ->orWhereIn('make', $makes);
-            })
-            ->get()
-            ->toArray();
-    }
+    //     return Vehicle::query()
+    //         ->whereNotIn('id', $viewedVehicleIds)
+    //         ->where(function ($query) use ($makes, $models) {
+    //             $query->whereIn('model', $models)
+    //                 ->orWhereIn('make', $makes);
+    //         })
+    //         ->get()
+    //         ->toArray();
+    // }
 
-    protected function resolveViewerIdentity(): array
-    {
-        if (Auth::check()) {
-            return ['user_id', Auth::id()];
-        }
+    // protected function resolveViewerIdentity(): array
+    // {
+    //     if (Auth::check()) {
+    //         return ['user_id', Auth::id()];
+    //     }
 
-        return ['guest_id', session()->getId()];
-    }
+    //     return ['guest_id', session()->getId()];
+    // }
 
-    protected function fallbackRecommendations()
-    {
-        return Vehicle::latest()
-            ->limit(40)
-            ->get()
-            ->toArray();
-    }
+    // protected function fallbackRecommendations()
+    // {
+    //     return Vehicle::latest()
+    //         ->limit(40)
+    //         ->get()
+    //         ->toArray();
+    // }
 
 
     // public function createList()
@@ -162,13 +162,13 @@ class Recomendation extends Component
     //     $this->reccomendation = $this->vehicles;
     // }
 
-    public function mount(){
-        $this->reccomendation = $this->fallbackRecommendations();
-    }
+    // public function mount(){
+    //     $this->reccomendation = $this->fallbackRecommendations();
+    // }
 
     public function render()
     {
-        $this->reccomendation = $this->vehicles;
+        $this-> reccomendation  = $this->vehicles;
         return view('livewire.recomendation');
     }
 }
