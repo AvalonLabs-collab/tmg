@@ -163,7 +163,11 @@ class Recomendation extends Component
     // }
 
     public function mount(){
-        $this->reccomendation = [];
+        $this->reccomendation = [
+            [],
+            [],
+            [],
+        ];
     }
 
     public function render()
