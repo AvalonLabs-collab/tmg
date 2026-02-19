@@ -4,7 +4,7 @@
         <div class="container">
             <header class="b-detail__head s-lineDownLeft wow zoomInUp" data-wow-delay="0.5s">
                 <div class="row">
-                    <div class="col-sm-9 col-xs-12">
+                    {{-- <div class="col-sm-9 col-xs-12">
                         <div class="b-detail__head-title">
                            @if (isset($vehicle->make))
                                <h1>{{$vehicle->make}}</h1>
@@ -15,7 +15,7 @@
 
 
                         </div>
-                    </div>
+                    </div> --}}
                      @if (isset($vehicle->currency ) && isset($vehicle->price))
                           <div class="col-sm-3 col-xs-12">
                         <div class="b-detail__head-price">
