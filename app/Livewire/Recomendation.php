@@ -148,13 +148,13 @@ class Recomendation extends Component
     //     return ['guest_id', session()->getId()];
     // }
 
-    // protected function fallbackRecommendations()
-    // {
-    //     return Vehicle::latest()
-    //         ->limit(40)
-    //         ->get()
-    //         ->toArray();
-    // }
+    protected function fallbackRecommendations()
+    {
+        return Vehicle::latest()
+            ->limit(30)
+            ->get()
+            ->toArray();
+    }
 
 
     // public function createList()
@@ -163,11 +163,7 @@ class Recomendation extends Component
     // }
 
     public function mount(){
-        $this->reccomendation = [
-            [],
-            [],
-            [],
-        ];
+        $this->reccomendation = $this->fallbackRecommendations();
     }
 
     public function render()
