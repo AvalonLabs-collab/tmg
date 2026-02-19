@@ -101,7 +101,7 @@ class Recomendation extends Component
         'drivetrain' => 'RWD',
         'status' => 'Used',
       ],
-];
+      ];
 
     public $reccomendation;
         // protected $listeners = ['hydrate' => 'createList'];
@@ -162,13 +162,12 @@ class Recomendation extends Component
     //     $this->reccomendation = $this->vehicles;
     // }
 
-    // public function mount(){
-    //     $this->reccomendation = $this->fallbackRecommendations();
-    // }
+    public function mount(){
+        $this->reccomendation = [];
+    }
 
     public function render()
     {
-        $this-> reccomendation  = $this->vehicles;
         return view('livewire.recomendation');
     }
 }

@@ -11,7 +11,7 @@
                         <span class="b-world__item-val-title">REGISTERED <span>2014</span></span>
                     </div>
 
-                    <h2><a href="/vehicle/{{$item['id']}}">{{ $item['make'] ?? '' }} {{ $item['model'] ?? '' }}</a></h2>
+                    {{-- <h2><a href="/vehicle/{{$item['id']}}">{{ $item['make'] ?? '' }} {{ $item['model'] ?? '' }}</a></h2> --}}
 
                     <div class="b-auto__main-item-info s-lineDownLeft">
                         <span class="m-price">
