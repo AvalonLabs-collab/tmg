@@ -24,6 +24,17 @@ class CompanyResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'profile';
 
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Company Profile Management';
+    }
+    public static function getNavigationSort(): ?int
+{
+    return 3;
+}
+
+
     protected static ?string $title = 'Profile';
 
     public static function form(Schema $schema): Schema

@@ -25,6 +25,16 @@ class VehicleResource extends Resource
 
     // protected static ?string $recordTitleAttribute = 'VEHICLE MANAGEMENT';
 
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Vehicle Management';
+    }
+    public static function getNavigationSort(): ?int
+{
+    return 2; // lower numbers appear first
+}
+
     public static function form(Schema $schema): Schema
     {
         return VehicleForm::configure($schema);
